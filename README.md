@@ -82,8 +82,9 @@ the right place!
 
 ## Available Samples
 
-- `s3_bucket_creation_stack`: Sample with cdk script to create a private versioned S3 bucket and another one with fully public read policies.
-- `dynamo_db`: Sample with cdk script to create a DynamoDB table.
+- `s3_bucket`: cdk project to create a private versioned S3 bucket and another one with fully public read policies.
+- `dynamo_db`: cdk project to create a DynamoDB table.
+- `lambda`: cdk project to create a Lambda function.
 
 ## Contribution
 
