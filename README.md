@@ -83,7 +83,7 @@ the right place!
 ## Available Samples
 
 - `s3_bucket_creation_stack`: Sample with cdk script to create a private versioned S3 bucket and another one with fully public read policies.
-
+- `dynamo_db`: Sample with cdk script to create a DynamoDB table.
 
 ## Contribution
 
