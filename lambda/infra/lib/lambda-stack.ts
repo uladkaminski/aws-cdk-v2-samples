@@ -1,6 +1,7 @@
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
+import * as cloudwatch from 'aws-cdk-lib/aws-cloudwatch';
 
 export class LambdaStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -14,7 +15,13 @@ export class LambdaStack extends cdk.Stack {
     });
 
     lambdaDemo.addEnvironment('ENVIRONMENT', 'dev');
-    
+
+    const cloudwatchDemo = new cloudwatch.Alarm(this, 'uk-lambda-alarm', {
+      metric: lambdaDemo.metricErrors(),
+      threshold: 1,
+      evaluationPeriods: 1,
+      alarmName: 'uk-lambda-alarm',
+    });
     
   }
 }

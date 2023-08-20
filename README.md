@@ -84,7 +84,7 @@ the right place!
 
 - `s3_bucket`: cdk project to create a private versioned S3 bucket and another one with fully public read policies.
 - `dynamo_db`: cdk project to create a DynamoDB table.
-- `lambda`: cdk project to create a Lambda function.
+- `lambda`: cdk project to create a Lambda function with cloudwatch alarm.
 
 ## Contribution
 
