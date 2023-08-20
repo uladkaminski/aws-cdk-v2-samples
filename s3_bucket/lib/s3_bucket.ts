@@ -3,7 +3,7 @@ import { Construct } from 'constructs';
 import * as s3 from 'aws-cdk-lib/aws-s3';
 import { AnyPrincipal, PolicyStatement } from 'aws-cdk-lib/aws-iam';
 
-export class S3BucketCreationStack extends cdk.Stack {
+export class S3BucketStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
