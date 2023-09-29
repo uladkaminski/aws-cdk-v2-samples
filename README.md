@@ -85,6 +85,8 @@ the right place!
 - `s3_bucket`: cdk project to create a private versioned S3 bucket and another one with fully public read policies.
 - `dynamo_db`: cdk project to create a DynamoDB table.
 - `lambda`: cdk project to create a Lambda function with cloudwatch alarm.
+- `gateway_lambda_s3`: stack with S3 bucket, lambda function with IAM role to access S3. Api Gateway on top of the lambda.
+- `route53-ecs-fargate`: stack with route53 subdomain record. Alb with routing to ECS with Fargate container taken from ECR. 
 
 ## Contribution
 
