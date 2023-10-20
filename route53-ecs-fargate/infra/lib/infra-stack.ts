@@ -6,9 +6,9 @@ import * as route53 from 'aws-cdk-lib/aws-route53';
 import * as ecr from 'aws-cdk-lib/aws-ecr';
 import * as route53Targets from 'aws-cdk-lib/aws-route53-targets';
 import * as acm from 'aws-cdk-lib/aws-certificatemanager';
+import * as elbv2 from 'aws-cdk-lib/aws-elasticloadbalancingv2';
 import * as fs from 'fs';
 import { Construct } from 'constructs';
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
 
 export class InfraStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -48,6 +48,8 @@ export class InfraStack extends cdk.Stack {
         taskDefinition: taskDef,
         publicLoadBalancer: true, // if you want the LB to be internet-facing,
         desiredCount: 2, // amount of instances
+        protocol: elbv2.ApplicationProtocol.HTTPS,
+        certificate: cert,
     });
 
     new route53.ARecord(this, 'SubdomainRecord', {
